@@ -63,5 +63,8 @@ io.on("connection", (socket) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("Server running on port", PORT));
 
+// ✅ CORRECT: Change 'app.listen' to 'server.listen'
+server.listen(PORT, function () {
+    console.log("Server running on port " + PORT);
+});
