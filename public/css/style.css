@@ -1,0 +1,55 @@
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 400px;
+    height: 400px;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light { background: #f0d9b5; }
+.dark  { background: #b58863; }
+
+.piece {
+    font-size: 36px;
+    user-select: none;
+    cursor: grab;
+}
+
+.flipped {
+    transform: rotate(180deg);
+}
+
+.flipped .piece {
+    transform: rotate(180deg);
+}
+
+/* ... keep your board styles ... */
+
+.piece {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.piece.draggable {
+    cursor: grab;
+}
+
+/* --- THE IMPORTANT PART --- */
+
+/* Make White pieces actual White color */
+.piece.white { 
+    color: white; 
+    /* This shadow makes the white piece visible on light squares */
+    filter: drop-shadow(0 0 2px rgba(0,0,0,1)); 
+}
+
+/* Make Black pieces actual Black color */
+.piece.black { 
+    color: black;
+}
